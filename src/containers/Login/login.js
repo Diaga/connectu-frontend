@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
         width: '40%'
     },
     text:{
-        fontWeight: 700
+        fontWeight: 700,
+      
     }
     
 
@@ -69,8 +70,9 @@ const Login = () => {
           Login
         </Button>
         <br/>
-        <Typography variant="caption" color="secondary" className={classes.text}>
-          Don't have an account? <span style={{color: blueGrey[500]}}><a href="/signup"></a>Signup</span>
+        <br/>
+        <Typography variant="body2" color="secondary" className={classes.text}>
+          Don't have an account? <span style={{color: blueGrey[500]}}><a href="/signup">Signup</a></span>
         </Typography>
 
 
