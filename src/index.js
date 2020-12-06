@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { blueGrey } from '@material-ui/core/colors';
+/* hello */
+
+const theme= createMuiTheme({
+  palette:{
+    primary: {
+      main: blueGrey[500]
+    },
+    secondary:{
+      main: '#0F0C00'
+    }
+}})
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme={theme}>
+     <App />
+  </ThemeProvider>,
+   
+  
   document.getElementById('root')
 );
 
