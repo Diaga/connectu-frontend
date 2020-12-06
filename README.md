@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+![Socialify-Image](https://socialify.git.ci/Diaga/connectu-frontend/image?description=1&font=Raleway&language=1&pattern=Signal&theme=Dark)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contributing
 
-## Available Scripts
+### Setup the environment
 
-In the project directory, you can run:
+1. Ensure npm is installed on your machine
+2. Run the following command in project directory to install required dependencies:
+```shell
+npm install
+```
+3. Run the following command to start the application in development mode:
+```shell
+npm start
+```
+4. To deploy the application or update the existing deployed version:
+```shell
+npm run deploy
+```
 
-### `npm start`
+### We Use [GitHub Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+Pull requests are the best way to propose changes to the codebase (we use GitHub Flow). We actively welcome your pull requests:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Create your branch from master.
+1. If you've added code that should be tested, add tests.
+1. If you've changed APIs, update the documentation.
+1. Ensure the test suite passes.
+1. Make sure your code lints.
+1. Create that pull request!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Commit Message and Pull Request Title
+Commit message and pull request title should follow Conventional Commits.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+An easy way to achieve that is to install [commitizen](https://github.com/commitizen/cz-cli) and run git cz when committing.
