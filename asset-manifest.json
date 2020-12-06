@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/connectu-frontend/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/connectu-frontend/static/js/main.2a8b9d8f.chunk.js",
+    "main.js.map": "/connectu-frontend/static/js/main.2a8b9d8f.chunk.js.map",
+    "runtime-main.js": "/connectu-frontend/static/js/runtime-main.bbdf19d8.js",
+    "runtime-main.js.map": "/connectu-frontend/static/js/runtime-main.bbdf19d8.js.map",
+    "static/js/2.a27e6c7c.chunk.js": "/connectu-frontend/static/js/2.a27e6c7c.chunk.js",
+    "static/js/2.a27e6c7c.chunk.js.map": "/connectu-frontend/static/js/2.a27e6c7c.chunk.js.map",
+    "static/js/3.8ef89853.chunk.js": "/connectu-frontend/static/js/3.8ef89853.chunk.js",
+    "static/js/3.8ef89853.chunk.js.map": "/connectu-frontend/static/js/3.8ef89853.chunk.js.map",
+    "index.html": "/connectu-frontend/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/connectu-frontend/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.a27e6c7c.chunk.js.LICENSE.txt": "/connectu-frontend/static/js/2.a27e6c7c.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/connectu-frontend/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bbdf19d8.js",
+    "static/js/2.a27e6c7c.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.2a8b9d8f.chunk.js"
+  ]
+}
