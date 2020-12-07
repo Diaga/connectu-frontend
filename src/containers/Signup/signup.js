@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     text:{
         fontWeight: 700
     }
-    
+
 
 }))
 
@@ -30,10 +30,10 @@ const Signup = () => {
     const [value, setValue] = React.useState('student');
 
     const handleChange = (event) => {
-    
+
       setValue(event.target.value);
-      
-     
+
+
     };
   return (
     <Container maxWidth="xs">
@@ -44,7 +44,7 @@ const Signup = () => {
         bgcolor="white"
         boxShadow="3"
       >
-        
+
         <Typography variant="h3" color="primary" className={classes.heading}>
           Signup
         </Typography>
@@ -53,7 +53,7 @@ const Signup = () => {
           Signup your account
         </Typography>
         <br/>
-        
+
         <TextField
           id="outlined-size-small"
           defaultValue="Username"
@@ -61,7 +61,7 @@ const Signup = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
         <TextField
           id="outlined-size-small"
@@ -70,10 +70,10 @@ const Signup = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
         <TextField
-          
+
           id="outlined-size-small"
           defaultValue="Password"
           variant="outlined"
@@ -86,20 +86,20 @@ const Signup = () => {
     <FormControlLabel value="student" control={<Radio />} label="Student" />
     <FormControlLabel value="mentor" control={<Radio />} label="Mentor" />
     </RadioGroup>
-    
-    
-    <a href="/degree">
+
+
+    <a href="/#/degree">
     <IconButton style={{float: 'right'}}>
         <ArrowForwardIcon/>
     </IconButton>
 
     </a>
-    
+
     <br/>
 
-        
+
         <Typography variant="body2" color="secondary" className={classes.text}>
-          Already have an account? <span style={{color: blueGrey[500]}}><a href="/login">Login</a></span>
+          Already have an account? <span style={{color: blueGrey[500]}}><a href="/#/login">Login</a></span>
         </Typography>
 
 

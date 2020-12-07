@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
     },
     text:{
         fontWeight: 700,
-      
+
     }
-    
+
 
 }))
 
@@ -36,7 +36,7 @@ const Login = () => {
         bgcolor="white"
         boxShadow="3"
       >
-        
+
         <Typography variant="h3" color="primary" className={classes.heading}>
           Login
         </Typography>
@@ -45,7 +45,7 @@ const Login = () => {
           Sign in to your account
         </Typography>
         <br/>
-        
+
         <TextField
           id="outlined-size-small"
           defaultValue="Username"
@@ -53,10 +53,10 @@ const Login = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
         <TextField
-          
+
           id="outlined-size-small"
           defaultValue="Password"
           variant="outlined"
@@ -72,7 +72,7 @@ const Login = () => {
         <br/>
         <br/>
         <Typography variant="body2" color="secondary" className={classes.text}>
-          Don't have an account? <span style={{color: blueGrey[500]}}><a href="/signup">Signup</a></span>
+          Don't have an account? <span style={{color: blueGrey[500]}}><a href="/#/signup">Signup</a></span>
         </Typography>
 
 

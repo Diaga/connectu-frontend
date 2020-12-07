@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     text:{
         fontWeight: 700
     },
-  
+
 
 }))
 
@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Degree = () => {
     const classes= useStyles();
-    
 
-    
+
+
   return (
     <Container maxWidth="xs">
       <Box
@@ -39,7 +39,7 @@ const Degree = () => {
         bgcolor="white"
         boxShadow="3"
       >
-        
+
         <Typography variant="h3" color="primary" className={classes.heading}>
           Signup
         </Typography>
@@ -48,7 +48,7 @@ const Degree = () => {
           Enter your degree details.
         </Typography>
         <br/>
-        
+
         <TextField
           id="outlined-size-small"
           defaultValue="University Name"
@@ -56,7 +56,7 @@ const Degree = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
         <TextField
           id="outlined-size-small"
@@ -65,7 +65,7 @@ const Degree = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
         <Grid container spacing={3}>
             <Grid item xs={6}>
@@ -76,7 +76,7 @@ const Degree = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
             </Grid>
             <Grid item xs={6}>
@@ -87,7 +87,7 @@ const Degree = () => {
           size="small"
           fullWidth
           margin="normal"
-        
+
         />
             </Grid>
         </Grid>
@@ -98,20 +98,20 @@ const Degree = () => {
           variant="outlined"
           size="small"
           margin="normal"
-        
+
         />
 
         </div>
-        <a href="/signup">
+        <a href="/#/signup">
     <IconButton style={{float: 'left'}}>
         <ArrowBackIcon/>
     </IconButton>
 
     </a>
-        
-        
 
-    <a href="/interests">
+
+
+    <a href="/#/interests">
     <IconButton style={{float: 'right'}}>
         <ArrowForwardIcon/>
     </IconButton>
@@ -119,9 +119,9 @@ const Degree = () => {
     </a>
     <br/>
 
-        
+
         <Typography variant="body2" color="secondary" className={classes.text}>
-          Already have an account? <span style={{color: blueGrey[500]}}><a href="/login">Login</a></span>
+          Already have an account? <span style={{color: blueGrey[500]}}><a href="/#/login">Login</a></span>
         </Typography>
 
 

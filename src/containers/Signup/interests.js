@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     text:{
         fontWeight: 700
     },
-  
+
 
 }))
 
@@ -32,8 +32,8 @@ const Interests = () => {
     const [value4, setValue4] = React.useState('engineer');
     const [value5, setValue5] = React.useState('officer');
 
-  
-    
+
+
   return (
     <Container maxWidth="sm">
       <Box
@@ -43,7 +43,7 @@ const Interests = () => {
         bgcolor="white"
         boxShadow="3"
       >
-        
+
         <Typography variant="h3" color="primary" className={classes.heading}>
           Signup
         </Typography>
@@ -85,9 +85,9 @@ const Interests = () => {
     </RadioGroup>
 
 
-        
-      
-        
+
+
+
 
 
     <br/>
@@ -96,9 +96,9 @@ const Interests = () => {
         </Button>
         <br/>
         <br/>
-        
+
         <Typography variant="body2" color="secondary" className={classes.text}>
-          Already have an account? <span style={{color: blueGrey[500]}}><a href="/login">Login</a></span>
+          Already have an account? <span style={{color: blueGrey[500]}}><a href="/#/login">Login</a></span>
         </Typography>
 
 
