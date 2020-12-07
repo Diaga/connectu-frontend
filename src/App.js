@@ -3,7 +3,7 @@ import Login from './containers/Login/login';
 import Signup from './containers/Signup/signup';
 import Degree from './containers/Signup/degree';
 import Interests from './containers/Signup/interests';
-import Home from './containers/Home/home2';
+import Home from './containers/Home/home';
 
 
 import './App.css';
