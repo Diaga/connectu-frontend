@@ -51,7 +51,7 @@ const Degree = () => {
 
         <TextField
           id="outlined-size-small"
-          defaultValue="University Name"
+          label="University Name"
           variant="outlined"
           size="small"
           fullWidth
@@ -60,7 +60,7 @@ const Degree = () => {
         />
         <TextField
           id="outlined-size-small"
-          defaultValue="Degree Major"
+          label="Degree Major"
           variant="outlined"
           size="small"
           fullWidth
@@ -71,7 +71,7 @@ const Degree = () => {
             <Grid item xs={6}>
             <TextField
           id="outlined-size-small"
-          defaultValue="Batch"
+          label="Batch"
           variant="outlined"
           size="small"
           fullWidth
@@ -82,7 +82,7 @@ const Degree = () => {
             <Grid item xs={6}>
             <TextField
           id="outlined-size-small"
-          defaultValue="Semester"
+          label="Semester"
           variant="outlined"
           size="small"
           fullWidth
@@ -94,7 +94,7 @@ const Degree = () => {
         <div style={{textAlign: 'left'}}>
         <TextField
           id="outlined-size-small"
-          defaultValue="CGPA"
+          label="CGPA"
           variant="outlined"
           size="small"
           margin="normal"

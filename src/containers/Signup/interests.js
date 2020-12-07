@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Button, Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, IconButton } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import { blueGrey } from "@material-ui/core/colors";
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = makeStyles((theme) => ({
     heading:{
@@ -26,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Interests = () => {
     const classes= useStyles();
-    const [value1, setValue1] = React.useState('auditor');
-    const [value2, setValue2] = React.useState('professor');
-    const [value3, setValue3] = React.useState('doctor');
-    const [value4, setValue4] = React.useState('engineer');
-    const [value5, setValue5] = React.useState('officer');
+    const [value1, setValue1] = React.useState('');
+    const [value2, setValue2] = React.useState('');
+    const [value3, setValue3] = React.useState('');
+    const [value4, setValue4] = React.useState('');
+    const [value5, setValue5] = React.useState('');
 
 
 
@@ -83,6 +83,7 @@ const Interests = () => {
     <FormControlLabel value="officer" control={<Radio />} label="An elated officer" />
     <FormControlLabel value="designer" control={<Radio />} label="A designer" />
     </RadioGroup>
+    
 
 
 
@@ -91,6 +92,11 @@ const Interests = () => {
 
 
     <br/>
+    <a href="/#/degree">
+    <IconButton style={{float: 'left'}}>
+        <ArrowBackIcon/>
+    </IconButton>
+    </a>
     <Button variant="contained" color="primary" disableElevation size="large" className={classes.button}>
           Signup
         </Button>

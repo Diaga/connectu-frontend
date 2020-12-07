@@ -14,8 +14,20 @@ const theme= createMuiTheme({
     },
     secondary:{
       main: '#0F0C00'
-    }
-}})
+    },
+    
+    
+    
+},
+typography: {
+  fontFamily: "'Montserrat', ",
+  fontSize: 16,
+  fontWeightLight: 300,
+  fontWeightRegular: 400,
+  fontWeightMedium: 500,
+  fontWeightBold: 700
+  }
+})
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

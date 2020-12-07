@@ -12,7 +12,15 @@ const useStyles = makeStyles((theme) => ({
     avatar:{
         width: theme.spacing(3),
         height: theme.spacing(3)
+    },
+    question:{
+      fontWeight: 700
+    },
+    answer:{
+      fontWeight: 500,
+      color: '#000'
     }
+    
 
 }))
 
@@ -37,8 +45,8 @@ const Answer = () => {
 
                     </CardHeader>
                     <CardContent>
-                    <Typography variant="body1" color="textPrimary">What is the difference between CS and SE?</Typography>
-                        <Typography variant="body2" color="textSecondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare laoreet odio quis commodo. Duis rhoncus tempor pretium. Sed laoreet tincidunt nisl. In tristique, lectus id lobortis gravida, nisi orci commodo lacus, sit amet accumsan sem tellus a tortor.</Typography>
+                    <Typography variant="body1" color="textPrimary" className={classes.question}>What is the difference between CS and SE?</Typography>
+                        <Typography variant="body2" classname={classes.answer}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare laoreet odio quis commodo. Duis rhoncus tempor pretium. Sed laoreet tincidunt nisl. In tristique, lectus id lobortis gravida, nisi orci commodo lacus, sit amet accumsan sem tellus a tortor.</Typography>
 
       
                     </CardContent>

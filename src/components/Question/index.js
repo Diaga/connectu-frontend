@@ -8,7 +8,12 @@ const useStyles = makeStyles((theme) => ({
     avatar:{
         width: theme.spacing(3),
         height: theme.spacing(3)
-    }
+    },
+    questionlabel:{
+        [theme.breakpoints.down("xs")]: {
+          fontSize:12
+        },
+      }
 
 }))
 
@@ -34,7 +39,7 @@ const Question = () => {
                     <CardContent>
                     <TextField
           id="outlined-size-small"
-          label="What is your question or link?"
+          label={<span className={classes.questionlabel}>What is your question or link?</span>}
           variant="outlined"
           size="small"
           fullWidth

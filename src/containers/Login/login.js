@@ -48,7 +48,7 @@ const Login = () => {
 
         <TextField
           id="outlined-size-small"
-          defaultValue="Username"
+          label="Username"
           variant="outlined"
           size="small"
           fullWidth
@@ -58,7 +58,7 @@ const Login = () => {
         <TextField
 
           id="outlined-size-small"
-          defaultValue="Password"
+          label="Password"
           variant="outlined"
           size="small"
           fullWidth

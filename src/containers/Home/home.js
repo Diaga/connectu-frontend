@@ -39,7 +39,11 @@ const useStyles = makeStyles((theme) => ({
           },
 
     },
-    theme
+    radiolabels:{
+      [theme.breakpoints.down("xs")]: {
+        fontSize:14
+      },
+    }
 
    
  
@@ -62,7 +66,7 @@ const Home = () => {
         <Layout/>
         
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{marginTop: '10px'}}>
             <Grid item sm={10} xs={7}>
                 <Grid container style={{marginLeft: '10px'}}>
                     <Grid item container direction="column" spacing={2}>
@@ -96,9 +100,9 @@ const Home = () => {
 <Typography variant="h6" color="primary" style={{textAlign: 'center'}}>Find a mentor</Typography>
 <Avatar className={classes.avatar} src={avatar} alt="John Doe"></Avatar>
 
-<RadioGroup aria-label="role" name="role" style={{marginLeft: 10 }}value={value} onChange={(e) => { setValue(e.target.value)}}>
-<FormControlLabel className={classes.radiolabels} value="student" control={<Radio />} label="Student" />
-<FormControlLabel className={classes.radiolabels} value="mentor" control={<Radio />} label="Mentor" />
+<RadioGroup aria-label="mentor" name="mentor" style={{marginLeft: 10 }}value={value} onChange={(e) => { setValue(e.target.value)}}>
+<FormControlLabel className={classes.radiolabels} value="Professional" control={<Radio />} label={<span className={classes.radiolabels}>Professional</span>} />
+<FormControlLabel className={classes.radiolabels} value="Student" control={<Radio />} label={<span className={classes.radiolabels}>Student</span>} /> 
 </RadioGroup>
 </Paper>
             </Grid>

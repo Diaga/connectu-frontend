@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Signup = () => {
     const classes= useStyles();
-    const [value, setValue] = React.useState('student');
+    const [value, setValue] = React.useState('');
 
     const handleChange = (event) => {
 
@@ -56,7 +56,7 @@ const Signup = () => {
 
         <TextField
           id="outlined-size-small"
-          defaultValue="Username"
+          label="Username"
           variant="outlined"
           size="small"
           fullWidth
@@ -65,7 +65,7 @@ const Signup = () => {
         />
         <TextField
           id="outlined-size-small"
-          defaultValue="Email"
+          label="Email"
           variant="outlined"
           size="small"
           fullWidth
@@ -75,7 +75,7 @@ const Signup = () => {
         <TextField
 
           id="outlined-size-small"
-          defaultValue="Password"
+          label="Password"
           variant="outlined"
           size="small"
           fullWidth
