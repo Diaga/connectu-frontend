@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Card, CardHeader, CardContent, TextField } from "@material-ui/core";
+import { Avatar, Card, CardHeader, CardContent, TextField, Button } from "@material-ui/core";
 import avatar from '../../images/person.png'
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -45,6 +45,10 @@ const Question = () => {
           fullWidth
           margin="normal"
         />
+         <Button variant="contained" color="primary" disableElevation size="small" className={classes.button}>
+          Ask Question
+        </Button>
+
                     </CardContent>
                 </Card>
 

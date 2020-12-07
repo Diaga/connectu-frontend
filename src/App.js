@@ -4,6 +4,8 @@ import Signup from './containers/Signup/signup';
 import Degree from './containers/Signup/degree';
 import Interests from './containers/Signup/interests';
 import Home from './containers/Home/home';
+import Mentors from './containers/Pairing/mentor';
+
 
 
 import './App.css';
@@ -16,6 +18,8 @@ function App() {
             <Route exact path="/signup" component={Signup}></Route>
             <Route exact path="/degree" component={Degree}></Route>
             <Route exact path="/interests" component={Interests}></Route>
+            <Route exact path="/mentors" component={Mentors}></Route>
+
         </HashRouter>
 
     );

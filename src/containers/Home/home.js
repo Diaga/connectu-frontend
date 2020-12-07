@@ -56,9 +56,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Home = () => {
+const Home = (props) => {
     
     const classes= useStyles();
+
+    const handleOptionChange = (e) => {
+      if(e.target.value == 'student'){
+        props.history.push('/mentors')
+      }
+      else if(e.target.value == 'professional'){
+        props.history.push('/')
+      }
+    }
     const [value, setValue] = React.useState('');
     return (
         <>
@@ -101,8 +110,8 @@ const Home = () => {
 <Avatar className={classes.avatar} src={avatar} alt="John Doe"></Avatar>
 
 <RadioGroup aria-label="mentor" name="mentor" style={{marginLeft: 10 }}value={value} onChange={(e) => { setValue(e.target.value)}}>
-<FormControlLabel className={classes.radiolabels} value="Professional" control={<Radio />} label={<span className={classes.radiolabels}>Professional</span>} />
-<FormControlLabel className={classes.radiolabels} value="Student" control={<Radio />} label={<span className={classes.radiolabels}>Student</span>} /> 
+<FormControlLabel className={classes.radiolabels} value="professional" control={<Radio />} label={<span className={classes.radiolabels}>Professional</span>} />
+<FormControlLabel className={classes.radiolabels} value="student" control={<Radio />} onChange={handleOptionChange} label={<span className={classes.radiolabels}>Student</span>} /> 
 </RadioGroup>
 </Paper>
             </Grid>
