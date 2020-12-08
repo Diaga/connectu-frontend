@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ChatIcon from '@material-ui/icons/Chat';
 import Layout from '../../components/Layout'
-import { Phone } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
