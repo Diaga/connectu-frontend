@@ -6,7 +6,7 @@ import Interests from './containers/Signup/interests';
 import Home from './containers/Home/home';
 import Mentors from './containers/Pairing/mentor';
 import Professional from './containers/Pairing/professional';
-
+import Chat from './containers/Chat/Chat';
 
 
 
@@ -21,6 +21,7 @@ function App() {
             <Route exact path="/degree" component={Degree}></Route>
             <Route exact path="/interests" component={Interests}></Route>
             <Route exact path="/mentors" component={Mentors}></Route>
+            <Route exact path="/chat" component={Chat}></Route>
             <Route exact path="/professionals" component={Professional}></Route>
         </HashRouter>
 
