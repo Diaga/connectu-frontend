@@ -5,6 +5,7 @@ import  ShareIcon from '@material-ui/icons/Share';
 import avatar from '../../images/person.png'
 import { makeStyles } from '@material-ui/core/styles';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import CommentIcon from '@material-ui/icons/Comment';
 
 
 
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Answer = () => {
+const Answer = (props) => {
     const classes= useStyles();
     return (
         <div>
@@ -60,6 +61,13 @@ const Answer = () => {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
+        <div onClick={props.showCommentsModal}>
+        <IconButton aria-label="comment">
+          <CommentIcon/>
+        </IconButton>
+        </div>
+        
+        
              </CardActions>
              </Card>
 
