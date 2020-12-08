@@ -16,9 +16,6 @@ function App() {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/signup" component={SignupGroup}/>
             <Route exact path="/mentors" component={Mentors}/>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/mentors" component={Mentors} />
             <Route exact path="/professionals" component={Professional} />
         </HashRouter>
 
