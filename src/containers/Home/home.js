@@ -1,4 +1,5 @@
 import React from "react";
+import Popup from 'reactjs-popup';
 import Layout from "../../components/Layout";
 import {
     Typography,
@@ -10,6 +11,8 @@ import {
     FormControlLabel,
     TextField,
     Button,
+    Link,
+    Divider
 
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -186,6 +189,88 @@ const Home = (props) => {
                                     label={<span className={classes.radiolabels}>Student</span>}
                                 />
                             </RadioGroup>
+                            <Button variant="contained" color="primary" disableElevation size="small" className={classes.button} style={{marginLeft:"5vw", marginBottom:"2vh"}}>
+                                FIND
+                            </Button>
+                        </Paper>
+                        <Paper className={classes.paper} style={{ marginTop:"3vh"}}>
+                            <Typography
+                                variant="h6"
+                                color="primary"
+                                style={{ textAlign: "center" }}
+                            >
+                                Find university details
+                            </Typography>
+                            <Popup
+                                trigger={<Button variant="contained" color="primary" disableElevation size="small" className={classes.button} style={{marginLeft:"5vw", marginBottom:"2vh"}}>
+                                    FIND
+                                </Button>}
+                                position="middle center">
+                                <div>
+                                    <Grid container
+                                          justify="center"
+                                          alignItems="center"
+                                    >
+                                        <Paper style={{ marginRight:"85vw", width:"50vw", marginBottom:"35vh", padding:"3vw"}}>
+                                            <div>
+                                                <Typography variant="h7" style={{color: '#0E4462'}}>
+                                                    NUST
+                                                </Typography>
+                                                <div>
+                                                    Visit the website
+                                                    <Link href=""> here. </Link>
+                                                </div>
+                                                <div>
+                                                    <Typography variant="h8"> Degrees Offered: </Typography>
+                                                    BS Computer Science, BS Mechanical Engineering, BS Civil Engineering, BS Psychology, BBA, BS Architecture, BS Electrical Engineering
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <Divider></Divider>
+                                                <Typography variant="h7" style={{color: '#0E4462'}}>
+                                                    FAST
+                                                </Typography>
+                                                <div>
+                                                    Visit the website
+                                                    <Link href=""> here. </Link>
+                                                </div>
+                                                <div>
+                                                    <Typography variant="h8"> Degrees Offered: </Typography>
+                                                    BS Computer Science, BS Mechanical Engineering, BS Civil Engineering, BS Psychology, BBA, BS Architecture, BS Electrical Engineering
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <Divider></Divider>
+                                                <Typography variant="h7" style={{color: '#0E4462'}}>
+                                                    COMSATS
+                                                </Typography>
+                                                <div>
+                                                    Visit the website
+                                                    <Link href=""> here. </Link>
+                                                </div>
+                                                <div>
+                                                    <Typography variant="h8"> Degrees Offered: </Typography>
+                                                    BS Computer Science, BS Mechanical Engineering, BS Civil Engineering, BS Psychology, BBA, BS Architecture, BS Electrical Engineering
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <Divider></Divider>
+                                                <Typography variant="h7" style={{color: '#0E4462'}}>
+                                                    LUMS
+                                                </Typography>
+                                                <div>
+                                                    Visit the website
+                                                    <Link href=""> here. </Link>
+                                                </div>
+                                                <div>
+                                                    <Typography variant="h8"> Degrees Offered: </Typography>
+                                                    BS Computer Science, BS Mechanical Engineering, BS Civil Engineering, BS Psychology, BBA, BS Architecture, BS Electrical Engineering
+                                                </div>
+                                            </div>
+                                        </Paper>
+                                    </Grid>
+                                </div>
+                            </Popup>
                         </Paper>
                     </Grid>
                 </Grid>
