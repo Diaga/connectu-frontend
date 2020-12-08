@@ -15,7 +15,18 @@ function _getHeaders() {
 
 async function jsonFetch({fetchPromise}) {
     const response = await fetchPromise;
+    if (!response.ok) {
+        throw Error('Request failed');
+    }
     return await response.json();
+}
+
+export function isUserLoggedIn() {
+    return localStorage.getItem('token') !== null && localStorage.getItem('token') !== undefined;
+}
+
+export function logout() {
+    localStorage.removeItem('token');
 }
 
 export async function authToken({email, password}) {
@@ -32,6 +43,8 @@ export async function authToken({email, password}) {
         )
     });
     localStorage.setItem('token', response.token);
+
+    return response;
 }
 
 export async function createUser({username, email, password, role, degree, university, answer_1, answer_2, answer_3}) {

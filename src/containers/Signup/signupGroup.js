@@ -4,7 +4,7 @@ import {Degree} from './degree';
 import {Interests} from './interests';
 import {Box, Container} from "@material-ui/core";
 
-const {createUser, authToken} = require('../../services/user_api');
+const {createUser, authToken, isUserLoggedIn} = require('../../services/user_api');
 
 
 export class SignupGroup extends Component {
@@ -51,6 +51,9 @@ export class SignupGroup extends Component {
     }
 
     render() {
+        if (isUserLoggedIn()) {
+            this.props.history.push('/');
+        }
         return <section
             style={{
                 backgroundImage: 'url(http://qsf.fs.quoracdn.net/-4-images.home.illo_1920.png-26-e9e6fbe02d908942.png)',

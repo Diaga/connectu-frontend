@@ -21,11 +21,12 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
+import {logout} from "../../services/user_api";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
-  
+
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -110,7 +111,10 @@ export default function MiniDrawer() {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={() => {
+                logout();
+                window.location.reload();
+            }}
             edge="start"
             className={clsx(classes.menuButton, {
               [classes.hide]: open,
@@ -159,9 +163,9 @@ export default function MiniDrawer() {
             </ListItem>
             </List>
 
-            
 
-          
+
+
         <Divider />
         <List>
         <ListItem button key="settings">
@@ -174,10 +178,10 @@ export default function MiniDrawer() {
             </ListItem>
 
         </List>
-        
+
       </Drawer>
       </>
-      
- 
+
+
   );
 }
