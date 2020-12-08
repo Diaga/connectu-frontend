@@ -114,9 +114,9 @@ const Home = (props) => {
     // }
 
     const handleOptionChange = (e) => {
-        if (e.target.value == "student") {
+        if (e.target.value === "student") {
             props.history.push("/mentors");
-        } else if (e.target.value == "professional") {
+        } else if (e.target.value === "professional") {
             props.history.push("/professionals");
         }
     };

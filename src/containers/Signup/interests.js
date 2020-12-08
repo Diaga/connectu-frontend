@@ -7,7 +7,7 @@ import {
     IconButton
 } from "@material-ui/core";
 import {withStyles} from '@material-ui/core/styles';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 const useStyles = (theme) => ({
     heading: {
@@ -35,41 +35,35 @@ export class Interests extends Component {
         const classes = this.props;
         return (
 
-            <Container maxWidth="sm">
-                <Box
-                    textAlign="center"
-                    p="24px"
-                    mt="50px"
-                    bgcolor="white"
-                    boxShadow="3"
+            <div>
+
+                <Typography variant="h3" color="primary" className={classes.heading}
+
                 >
+                    Signup
+                </Typography>
+                <br/>
+                <Typography variant="body1" color="secondary" className={classes.subheading}>
+                    We would like to know you better
+                </Typography>
+                <br/>
 
-                    <Typography variant="h3" color="primary" className={classes.heading}
+                <br/>
 
-                    >
-                        Signup
-                    </Typography>
-                    <br/>
-                    <Typography variant="body1" color="secondary" className={classes.subheading}>
-                        Tell a little about yourself
-                    </Typography>
-                    <br/>
+                <div style={
+                    {display: 'flex', justifyContent: 'space-evenly'}
+                }>
+                    <Button variant="contained" size="large"
+                            className={classes.button} onClick={() => this.props.handlePage({page: 'signup'})}>
+                        <ArrowBackIcon/> <span style={{marginLeft: 5}}>Back</span>
+                    </Button>
 
-                    <br/>
-
-                    <IconButton style={{float: 'left'}} onClick={() => this.props.handlePage({page: 'degrees'})}>
-                        <ArrowBackIcon/>
-                    </IconButton>
-
-                    <Button variant="contained" color="primary" disableElevation size="large"
+                    <Button variant="contained" color="primary" size="large"
                             className={classes.button} onClick={() => this.props.login()}>
                         Signup
                     </Button>
-                    <br/>
-                    <br/>
-
-                </Box>
-            </Container>
+                </div>
+            </div>
         );
     }
 }

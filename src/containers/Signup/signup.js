@@ -7,7 +7,7 @@ import {
     Radio,
     RadioGroup,
     FormControlLabel,
-    IconButton
+    IconButton, Button
 } from "@material-ui/core";
 import {withStyles} from "@material-ui/core";
 import {blueGrey} from "@material-ui/core/colors";
@@ -39,81 +39,79 @@ export class Signup extends Component {
         const classes = this.props;
 
         return (
-            <Container maxWidth="xs">
-                <Box
-                    textAlign="center"
-                    p="24px"
-                    mt="50px"
-                    bgcolor="white"
-                    boxShadow="3"
-                >
+            <div>
+                <Typography variant="h3" color="primary" className={classes.heading} id="product-sans">
+                    Sign Up
+                </Typography>
+                <br/>
+                <Typography variant="body1" color="secondary" className={classes.subheading}>
+                    Create your account
+                </Typography>
+                <br/>
 
-                    <Typography variant="h3" color="primary" className={classes.heading}>
-                        Signup
-                    </Typography>
-                    <br/>
-                    <Typography variant="body1" color="secondary" className={classes.subheading}>
-                        Signup your account
-                    </Typography>
-                    <br/>
+                <TextField
+                    id="outlined-size-small"
+                    label="Username"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    margin="normal"
 
-                    <TextField
-                        id="outlined-size-small"
-                        label="Username"
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        margin="normal"
+                    onChange={(event) => this.props.handlePage({username: event.target.value})}
+                />
+                <TextField
+                    id="outlined-size-small"
+                    label="Email"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    margin="normal"
 
-                        onChange={(event) => this.props.handlePage({username: event.target.value})}
-                    />
-                    <TextField
-                        id="outlined-size-small"
-                        label="Email"
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        margin="normal"
+                    onChange={(event) => this.props.handlePage({email: event.target.value})}
+                />
+                <TextField
 
-                        onChange={(event) => this.props.handlePage({email: event.target.value})}
-                    />
-                    <TextField
+                    id="outlined-size-small"
+                    label="Password"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    margin="normal"
 
-                        id="outlined-size-small"
-                        label="Password"
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        margin="normal"
-
-                        onChange={(event) => this.props.handlePage({password: event.target.value})}
-                    />
-                    <Typography variant="body2" color="primary"
-                                style={{textAlign: 'left', fontSize: 16, fontWeight: 550}}>You wish to sign up
-                        as:</Typography>
-                    <RadioGroup aria-label="role" name="role" row value={this.props.role}
-                                onChange={(event, value) => this.props.handlePage({role: event.target.value})}>
-                        <FormControlLabel value="student" control={<Radio/>} label="Student"/>
-                        <FormControlLabel value="mentor" control={<Radio/>} label="Mentor"/>
-                    </RadioGroup>
+                    onChange={(event) => this.props.handlePage({password: event.target.value})}
+                />
+                <Typography variant="body2" color="primary"
+                            style={{textAlign: 'left', fontSize: 16, fontWeight: 550}}>You wish to sign up
+                    as:</Typography>
+                <RadioGroup aria-label="role" name="role" row value={this.props.role}
+                            onChange={(event, value) => this.props.handlePage({role: event.target.value})}>
+                    <FormControlLabel value="student" control={<Radio/>} label="Student"/>
+                    <FormControlLabel value="mentor" control={<Radio/>} label="Mentor"/>
+                </RadioGroup>
 
 
-                    <IconButton style={{float: 'right'}} onClick={() => this.props.handlePage({page: 'degrees'})}>
-                        <ArrowForwardIcon/>
-                    </IconButton>
-                    <br/>
+                <div>
+                    <Button variant="contained" size="large"
+                            className={classes.button} style={{marginTop: 20}} onClick={() => {
+                        if (this.props.role === 'student') {
+                            this.props.handlePage({page: 'interests'});
+                        } else if (this.props.role === 'mentor') {
+                            this.props.handlePage({page: 'degrees'});
+                        }
+                    }}>
+                        <span style={{marginRight: 5, fontSize: 14}}>Next</span> <ArrowForwardIcon/>
+                    </Button>
+                </div>
 
-
+                <div style={{marginTop: 20}}>
                     <Typography variant="body2" color="secondary" className={classes.text}>
                         Already have an account? <span style={{color: blueGrey[500]}}><a
                         href="/#/login">Login</a></span>
                     </Typography>
-
-
-                </Box>
-            </Container>
+                </div>
+            </div>
         );
     }
-};
+}
 
 export default withStyles(useStyles, {withTheme: true})(Signup);

@@ -5,10 +5,9 @@ import {
     Box,
     Typography,
     TextField,
-    IconButton, FormControl, InputLabel, Select, MenuItem
+    IconButton, FormControl, InputLabel, Select, MenuItem, Button
 } from "@material-ui/core";
 import {withStyles} from '@material-ui/core/styles';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = (theme) => ({
@@ -45,96 +44,90 @@ export class Degree extends Component {
         const classes = this.props;
 
         return (
-            <Container maxWidth="xs">
-                <Box
-                    textAlign="center"
-                    p="24px"
-                    mt="50px"
-                    bgcolor="white"
-                    boxShadow="3"
+            <div>
 
-                    style={{paddingBottom: 50}}
-                >
+                <Typography variant="h3" color="primary" className={classes.heading}>
+                    Signup
+                </Typography>
+                <br/>
+                <Typography variant="body1" color="secondary" className={classes.subheading}>
+                    Enter your degree details.
+                </Typography>
+                <br/>
 
-                    <Typography variant="h3" color="primary" className={classes.heading}>
-                        Signup
-                    </Typography>
-                    <br/>
-                    <Typography variant="body1" color="secondary" className={classes.subheading}>
-                        Enter your degree details.
-                    </Typography>
-                    <br/>
+                <TextField
+                    id="outlined-size-small"
+                    label="University Name"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    margin="normal"
 
-                    <TextField
-                        id="outlined-size-small"
-                        label="University Name"
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        margin="normal"
-
-                        onChange={(event) => this.props.handlePage({university: event.target.value})}
-                    />
-                    <FormControl fullWidth className={classes.formControl}>
-                        <InputLabel id="degree">Degree</InputLabel>
-                        <Select
-                            labelId="degree"
-                            id="degree-select"
-                            value={this.props.degree}
-                            onChange={(event, child) => this.props.handlePage({degree: event.target.value})}
-                        >
-                            {this.state.degrees.map((value, index) => {
-                                return <MenuItem value={value.id}>{value.name}</MenuItem>;
-                            })}
-                        </Select>
-                    </FormControl>
-                    <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                            <TextField
-                                id="outlined-size-small"
-                                label="Batch"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                margin="normal"
-
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <TextField
-                                id="outlined-size-small"
-                                label="Semester"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                margin="normal"
-
-                            />
-                        </Grid>
-                    </Grid>
-                    <div style={{textAlign: 'left'}}>
+                    onChange={(event) => this.props.handlePage({university: event.target.value})}
+                />
+                <FormControl fullWidth className={classes.formControl}>
+                    <InputLabel id="degree">Degree</InputLabel>
+                    <Select
+                        labelId="degree"
+                        id="degree-select"
+                        value={this.props.degree}
+                        onChange={(event, child) => this.props.handlePage({degree: event.target.value})}
+                    >
+                        {this.state.degrees.map((value, index) => {
+                            return <MenuItem value={value.id}>{value.name}</MenuItem>;
+                        })}
+                    </Select>
+                </FormControl>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
                         <TextField
                             id="outlined-size-small"
-                            label="CGPA"
+                            label="Batch"
                             variant="outlined"
                             size="small"
+                            fullWidth
                             margin="normal"
 
                         />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            id="outlined-size-small"
+                            label="Semester"
+                            variant="outlined"
+                            size="small"
+                            fullWidth
+                            margin="normal"
 
-                    </div>
-                    <IconButton style={{float: 'left'}} onClick={() => this.props.handlePage({page: 'signup'})}>
-                        <ArrowBackIcon/>
-                    </IconButton>
+                        />
+                    </Grid>
+                </Grid>
+                <div style={{textAlign: 'left'}}>
+                    <TextField
+                        id="outlined-size-small"
+                        label="CGPA"
+                        variant="outlined"
+                        size="small"
+                        margin="normal"
+
+                    />
+
+                </div>
+
+                <div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: 20}}>
+                    <Button variant="contained" size="large"
+                            className={classes.button} onClick={() => this.props.handlePage({page: 'signup'})}>
+                        <ArrowBackIcon /> <span style={{marginLeft: 5}}>Back</span>
+                    </Button>
 
 
-                    <IconButton style={{float: 'right'}} onClick={() => this.props.handlePage({page: 'interests'})}>
-                        <ArrowForwardIcon/>
-                    </IconButton>
-                    <br/>
+                    <Button variant="contained" color="primary" size="large"
+                            className={classes.button} onClick={() => this.props.login()}>
+                        Signup
+                    </Button>
+                </div>
 
-                </Box>
-            </Container>
+            </div>
         );
     }
 }
