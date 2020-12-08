@@ -45,26 +45,26 @@ const useStyles = makeStyles((theme) => ({
       },
     }
 
-   
- 
-    
-    
-      
-     
+
+
+
+
+
+
 
 }))
 
 
 
 const Home = (props) => {
-    
+
     const classes= useStyles();
 
     const handleOptionChange = (e) => {
-      if(e.target.value == 'student'){
+      if(e.target.value === 'student'){
         props.history.push('/mentors')
       }
-      else if(e.target.value == 'professional'){
+      else if(e.target.value === 'professional'){
         props.history.push('/')
       }
     }
@@ -73,66 +73,66 @@ const Home = (props) => {
         <>
          <div className={classes.root}>
         <Layout/>
-        
+
 
         <Grid container spacing={2} style={{marginTop: '10px'}}>
             <Grid item sm={10} xs={7}>
                 <Grid container style={{marginLeft: '10px'}}>
                     <Grid item container direction="column" spacing={2}>
                         <Grid item>
-                        <div className={classes.toolbar}></div>
+                        <div className={classes.toolbar} />
                         <Question/>
                         </Grid>
                         <Grid item>
-                       
+
                         <Answer/>
                         </Grid>
                         <Grid item>
-                       
+
                         <Answer/>
                         </Grid>
                         <Grid item>
-                       
+
                         <Answer/>
                         </Grid>
                     </Grid>
                 </Grid>
-           
-            
+
+
             </Grid>
-            
+
 
             <Grid item sm={2} xs={5}>
-            <div className={classes.toolbar}></div>
+            <div className={classes.toolbar} />
             <Paper className={classes.paper}>
 
 <Typography variant="h6" color="primary" style={{textAlign: 'center'}}>Find a mentor</Typography>
-<Avatar className={classes.avatar} src={avatar} alt="John Doe"></Avatar>
+<Avatar className={classes.avatar} src={avatar} alt="John Doe" />
 
-<RadioGroup aria-label="mentor" name="mentor" style={{marginLeft: 10 }}value={value} onChange={(e) => { setValue(e.target.value)}}>
+<RadioGroup aria-label="mentor" name="mentor" style={{marginLeft: 10 }} value={value} onChange={(e) => { setValue(e.target.value)}}>
 <FormControlLabel className={classes.radiolabels} value="professional" control={<Radio />} label={<span className={classes.radiolabels}>Professional</span>} />
-<FormControlLabel className={classes.radiolabels} value="student" control={<Radio />} onChange={handleOptionChange} label={<span className={classes.radiolabels}>Student</span>} /> 
+<FormControlLabel className={classes.radiolabels} value="student" control={<Radio />} onChange={handleOptionChange} label={<span className={classes.radiolabels}>Student</span>} />
 </RadioGroup>
 </Paper>
             </Grid>
         </Grid>
-        
-        
-        
-        
-  
-     
-      
-      
+
+
+
+
+
+
+
+
       </div>
         </>
-        
 
-        
-      
-    
 
-        
+
+
+
+
+
     )
 }
 

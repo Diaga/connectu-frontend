@@ -1,111 +1,119 @@
-import React from "react";
-import { Container, Box, Typography, TextField, Radio, RadioGroup, FormControlLabel, IconButton } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
-import { blueGrey } from "@material-ui/core/colors";
+import React, {Component} from "react";
+import {
+    Container,
+    Box,
+    Typography,
+    TextField,
+    Radio,
+    RadioGroup,
+    FormControlLabel,
+    IconButton
+} from "@material-ui/core";
+import {withStyles} from "@material-ui/core";
+import {blueGrey} from "@material-ui/core/colors";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 
-const useStyles = makeStyles((theme) => ({
-    heading:{
+const useStyles = (theme) => ({
+    heading: {
         fontWeight: 700,
         fontSize: 36
     },
-    subheading:{
+    subheading: {
         fontWeight: 500
     },
-    button:{
+    button: {
         width: '40%'
     },
-    text:{
+    text: {
         fontWeight: 700
     }
 
 
-}))
+});
 
 
+export class Signup extends Component {
 
-const Signup = () => {
-    const classes= useStyles();
-    const [value, setValue] = React.useState('');
+    render() {
+        const classes = this.props;
 
-    const handleChange = (event) => {
+        return (
+            <Container maxWidth="xs">
+                <Box
+                    textAlign="center"
+                    p="24px"
+                    mt="50px"
+                    bgcolor="white"
+                    boxShadow="3"
+                >
 
-      setValue(event.target.value);
+                    <Typography variant="h3" color="primary" className={classes.heading}>
+                        Signup
+                    </Typography>
+                    <br/>
+                    <Typography variant="body1" color="secondary" className={classes.subheading}>
+                        Signup your account
+                    </Typography>
+                    <br/>
 
+                    <TextField
+                        id="outlined-size-small"
+                        label="Username"
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        margin="normal"
 
-    };
-  return (
-    <Container maxWidth="xs">
-      <Box
-        textAlign="center"
-        p="24px"
-        mt="50px"
-        bgcolor="white"
-        boxShadow="3"
-      >
+                        onChange={(event) => this.props.handlePage({username: event.target.value})}
+                    />
+                    <TextField
+                        id="outlined-size-small"
+                        label="Email"
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        margin="normal"
 
-        <Typography variant="h3" color="primary" className={classes.heading}>
-          Signup
-        </Typography>
-        <br/>
-        <Typography variant="body1" color="secondary" className={classes.subheading}>
-          Signup your account
-        </Typography>
-        <br/>
+                        onChange={(event) => this.props.handlePage({email: event.target.value})}
+                    />
+                    <TextField
 
-        <TextField
-          id="outlined-size-small"
-          label="Username"
-          variant="outlined"
-          size="small"
-          fullWidth
-          margin="normal"
+                        id="outlined-size-small"
+                        label="Password"
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        margin="normal"
 
-        />
-        <TextField
-          id="outlined-size-small"
-          label="Email"
-          variant="outlined"
-          size="small"
-          fullWidth
-          margin="normal"
-
-        />
-        <TextField
-
-          id="outlined-size-small"
-          label="Password"
-          variant="outlined"
-          size="small"
-          fullWidth
-          margin="normal"
-        />
-        <Typography variant="body2" color="primary" style={{textAlign: 'left', fontSize: 16, fontWeight: 550}}>You wish to sign up as:</Typography>
-        <RadioGroup aria-label="role" name="role" row value={value} onChange={handleChange}>
-    <FormControlLabel value="student" control={<Radio />} label="Student" />
-    <FormControlLabel value="mentor" control={<Radio />} label="Mentor" />
-    </RadioGroup>
-
-
-    <a href="/#/degree">
-    <IconButton style={{float: 'right'}}>
-        <ArrowForwardIcon/>
-    </IconButton>
-
-    </a>
-
-    <br/>
+                        onChange={(event) => this.props.handlePage({password: event.target.value})}
+                    />
+                    <Typography variant="body2" color="primary"
+                                style={{textAlign: 'left', fontSize: 16, fontWeight: 550}}>You wish to sign up
+                        as:</Typography>
+                    <RadioGroup aria-label="role" name="role" row value={this.props.role}
+                                onChange={(event, value) => this.props.handlePage({role: event.target.value})}>
+                        <FormControlLabel value="student" control={<Radio/>} label="Student"/>
+                        <FormControlLabel value="mentor" control={<Radio/>} label="Mentor"/>
+                    </RadioGroup>
 
 
-        <Typography variant="body2" color="secondary" className={classes.text}>
-          Already have an account? <span style={{color: blueGrey[500]}}><a href="/#/login">Login</a></span>
-        </Typography>
+                    <IconButton style={{float: 'right'}} onClick={() => this.props.handlePage({page: 'degrees'})}>
+                        <ArrowForwardIcon/>
+                    </IconButton>
+                    <br/>
 
 
-      </Box>
-    </Container>
-  );
+                    <Typography variant="body2" color="secondary" className={classes.text}>
+                        Already have an account? <span style={{color: blueGrey[500]}}><a
+                        href="/#/login">Login</a></span>
+                    </Typography>
+
+
+                </Box>
+            </Container>
+        );
+    }
 };
 
-export default Signup;
+export default withStyles(useStyles, {withTheme: true})(Signup);
