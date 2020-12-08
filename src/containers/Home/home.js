@@ -66,9 +66,9 @@ class Home extends Component {
 
     handleOptionChange = (e) => {
         if (e.target.value === "student") {
-            this.props.history.push("/mentors");
+            this.props.history.push("/#/mentors");
         } else if (e.target.value === "professional") {
-            this.props.history.push("/professionals");
+            this.props.history.push("/#/professionals");
         }
     };
 
@@ -76,7 +76,7 @@ class Home extends Component {
         const classes = this.props;
 
         if (!isUserLoggedIn()) {
-            this.props.history.push('/login');
+            this.props.history.push('/#/login');
         }
         return (
             <>

@@ -47,12 +47,12 @@ export class SignupGroup extends Component {
             password: this.state.password
         });
 
-        this.props.history.push('/');
+        this.props.history.push('/#/');
     }
 
     render() {
         if (isUserLoggedIn()) {
-            this.props.history.push('/');
+            this.props.history.push('/#/');
         }
         return <section
             style={{

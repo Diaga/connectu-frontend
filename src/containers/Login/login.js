@@ -31,7 +31,7 @@ class Login extends Component {
         try {
             await authToken({email: this.state.email, password: this.state.password});
 
-            this.props.history.push('/');
+            this.props.history.push('/#/');
         } catch (e) {
             console.log(e);
         }
@@ -40,7 +40,7 @@ class Login extends Component {
     render() {
         const classes = this.props;
         if (isUserLoggedIn()) {
-            this.props.history.push('/');
+            this.props.history.push('/#/');
         }
         return (
             <section
