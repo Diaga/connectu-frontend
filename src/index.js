@@ -15,9 +15,6 @@ const theme= createMuiTheme({
     secondary:{
       main: '#0F0C00'
     },
-    
-    
-    
 },
 typography: {
   fontFamily: "'Montserrat', ",
@@ -33,8 +30,8 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
      <App />
   </ThemeProvider>,
-   
-  
+
+
   document.getElementById('root')
 );
 
