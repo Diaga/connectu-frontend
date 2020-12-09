@@ -1,32 +1,20 @@
-import {userUrl, authUrl} from './urls';
+import {userUrl, authUrl, jsonFetch, getHeaders} from './utils';
 
-function _getHeaders() {
-    let headers = {
-        'Content-Type': 'application/json'
-    }
-    const token = localStorage.getItem('token');
-    if (token !== undefined) {
-        headers['Authorization'] = `Token ${token}`;
-    }
-
-    return headers;
+export async function saveUser() {
+    const user = await getSelfUser();
+    localStorage.setItem('user', JSON.stringify(user));
 }
 
-
-async function jsonFetch({fetchPromise}) {
-    const response = await fetchPromise;
-    if (!response.ok) {
-        throw Error('Request failed');
-    }
-    return await response.json();
-}
-
-export function isUserLoggedIn() {
-    return localStorage.getItem('token') !== null && localStorage.getItem('token') !== undefined;
+export function getUserFromStorage() {
+    return JSON.parse(localStorage.getItem('user'));
 }
 
 export function logout() {
     localStorage.removeItem('token');
+}
+
+export function isUserLoggedIn() {
+    return localStorage.getItem('token') !== undefined && localStorage.getItem('token') !== null;
 }
 
 export async function authToken({email, password}) {
@@ -34,7 +22,7 @@ export async function authToken({email, password}) {
         fetchPromise: fetch(
             authUrl, {
                 method: 'POST',
-                headers: _getHeaders(),
+                headers: getHeaders(),
                 body: JSON.stringify({
                     email: email,
                     password: password
@@ -43,6 +31,7 @@ export async function authToken({email, password}) {
         )
     });
     localStorage.setItem('token', response.token);
+    await saveUser();
 
     return response;
 }
@@ -70,12 +59,21 @@ export async function createUser({username, email, password, role, degree, unive
         fetchPromise: fetch(
             userUrl, {
                 method: 'POST',
-                headers: _getHeaders(),
+                headers: getHeaders(),
                 body: JSON.stringify(body)
             }
         )
     });
 }
 
-
+export async function getSelfUser() {
+    return (await jsonFetch({
+        fetchPromise: fetch(
+            `${userUrl}?is_me=true`,
+            {
+                headers: getHeaders(),
+            }
+        )
+    }))[0];
+}
 

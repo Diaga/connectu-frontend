@@ -1,10 +1,7 @@
 import React, {Component} from "react";
 import {
-    Container,
     Button,
-    Box,
-    Typography,
-    IconButton
+    Typography
 } from "@material-ui/core";
 import {withStyles} from '@material-ui/core/styles';
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";

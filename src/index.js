@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider, createMuiTheme} from '@material-ui/core';
-import {blueGrey} from '@material-ui/core/colors';
 /* hello */
 
 const theme = createMuiTheme({
@@ -18,7 +17,7 @@ const theme = createMuiTheme({
 
     },
     typography: {
-        fontFamily: "'Montserrat', ",
+        fontFamily: "'Raleway', 'Roboto'",
         fontSize: 16,
         fontWeightLight: 300,
         fontWeightRegular: 400,
@@ -29,7 +28,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
-        <App id="product-sans"/>
+        <App/>
     </ThemeProvider>,
 
 
