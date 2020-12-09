@@ -1,5 +1,11 @@
 ![Socialify-Image](https://socialify.git.ci/Diaga/connectu-frontend/image?description=1&font=Raleway&language=1&pattern=Signal&theme=Dark)
 
+
+## Backend
+
+Checkout the repository for [ConnectU-Backend](https://github.com/Diaga/connectu-backend)
+
+
 ## Contributing
 
 ### Setup the environment
