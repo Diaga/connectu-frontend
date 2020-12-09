@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-
-import profileIcon from '../../../images/profile-photo-icon.svg';
-import upvoteIcon from '../../../images/upvote-icon.svg';
-import filledUpvoteIcon from '../../../images/filled-upvote-icon.svg';
-import {Button, IconButton} from "@material-ui/core";
+import React, {Component} from "react";
 import {updateUpvote} from "../../../services/forum_api";
+import profileIcon from "../../../images/profile-photo-icon.svg";
+import {Button, IconButton} from "@material-ui/core";
+import upvoteIcon from "../../../images/upvote-icon.svg";
+import filledUpvoteIcon from "../../../images/filled-upvote-icon.svg";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
-class Question extends Component {
+
+class Answer extends Component {
 
     constructor(props) {
         super(props);
@@ -32,10 +32,10 @@ class Question extends Component {
     async upvote() {
         if (this.state.self_upvote === 0) {
             this.setState({self_upvote: 1});
-            await updateUpvote({question: this.props.data.id, hasUpvoted: true});
+            await updateUpvote({answer: this.props.data.id, hasUpvoted: true});
         } else {
             this.setState({self_upvote: 0});
-            await updateUpvote({question: this.props.data.id, hasUpvoted: false});
+            await updateUpvote({answer: this.props.data.id, hasUpvoted: false});
         }
     }
 
@@ -59,11 +59,10 @@ class Question extends Component {
                     <img src={profileIcon} style={{width: 25, color: 'red', height: 25}}/>
                     <span style={{marginTop: 3, marginLeft: 5}}>{this.props.data.user.name}</span>
                 </div>
-                <div style={{fontWeight: 'bold', marginTop: 10}}>{this.props.data.title}</div>
                 <div style={{marginTop: 10}}>{this.props.data.answers !== null ?
-                    <span>{this.props.data.answers[0].text}</span> :
+                    <span>{this.props.data.text}</span> :
                     <span/>}</div>
-                <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 10}}>
+                <div style={{display: 'flex', justifyContent: 'flex-start', marginTop: 10}}>
 
                     <div style={{display: 'flex', alignContent: 'flex-start'}}>
 
@@ -82,18 +81,10 @@ class Question extends Component {
 
                     </div>
 
-                    <div>
-                        <a href={`/#/question/${this.props.data.id}`} style={{textDecoration: 'none'}}>
-                        <Button variant="contained" disableElevation size="small">
-                            Read more <ArrowForwardIcon style={{width: 15, height: 15, marginLeft: 5}}/>
-                        </Button>
-                        </a>
-                    </div>
-
                 </div>
             </div>
         );
     }
 }
 
-export default Question;
+export default Answer;

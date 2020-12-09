@@ -4,7 +4,8 @@ export const authUrl = `${rootUrl}token/`;
 export const coreUrl = `${rootUrl}core/`;
 export const userUrl = `${coreUrl}user/`;
 export const questionUrl = `${coreUrl}question/`;
-export const upvoteUrl = `${coreUrl}upvote/`
+export const upvoteUrl = `${coreUrl}upvote/`;
+export const answerUrl = `${coreUrl}answer/`;
 
 
 
